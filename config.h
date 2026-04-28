@@ -21,41 +21,48 @@
  * your students to implement realloc, you can delete the last two
  * traces.
  */
-#define DEFAULT_TRACEFILES                                                     \
-  "amptjp-bal.rep", "cccp-bal.rep", "cp-decl-bal.rep", "expr-bal.rep",         \
-      "coalescing-bal.rep", "random-bal.rep", "random2-bal.rep",               \
-      "binary-bal.rep", "binary2-bal.rep", "realloc-bal.rep",                  \
-      "realloc2-bal.rep"
+#define DEFAULT_TRACEFILES \
+  "amptjp-bal.rep",\
+  "cccp-bal.rep",\
+  "cp-decl-bal.rep",\
+  "expr-bal.rep",\
+  "coalescing-bal.rep",\
+  "random-bal.rep",\
+  "random2-bal.rep",\
+  "binary-bal.rep",\
+  "binary2-bal.rep",\
+  "realloc-bal.rep",\
+  "realloc2-bal.rep"
 
 /* This constant caps the contribution of throughput to the performance
- * index.  Once the students surpass MAX_THRUPUT, the get no further
+ * index.  Once the students surpass MAX_THRUPUT, the get no further 
  * benefit to their score.  This deters students from building extremely
  * fast, but extremely stupid, malloc packages.
  */
-#define MAX_THRUPUT 900E3 /* 900 Kops/sec */
+#define MAX_THRUPUT      900E3  /* 900 Kops/sec */
 
-/*
- * This constant determines the contributions of space utilization
- * (UTIL_WEIGHT) and throughput (1 - UTIL_WEIGHT) to the performance
- * index.
- */
+ /* 
+  * This constant determines the contributions of space utilization
+  * (UTIL_WEIGHT) and throughput (1 - UTIL_WEIGHT) to the performance
+  * index.  
+  */
 #define UTIL_WEIGHT .60
 
-/*
- * Alignment requirement in bytes (either 4 or 8)
+/* 
+ * Alignment requirement in bytes (either 4 or 8) 
  */
-#define ALIGNMENT 8
+#define ALIGNMENT 8  
 
-/*
- * Maximum heap size in bytes
+/* 
+ * Maximum heap size in bytes 
  */
-#define MAX_HEAP (20 * (1 << 20)) /* 20 MB */
+#define MAX_HEAP (20*(1<<20))  /* 20 MB */
 
 /*****************************************************************************
  * Set exactly one of these USE_xxx constants to "1" to select a timing method
  *****************************************************************************/
-#define USE_FCYC 0   /* cycle counter w/K-best scheme (x86 & Alpha only) */
-#define USE_ITIMER 0 /* interval timer (any Unix box) */
-#define USE_GETTOD 1 /* gettimeofday (any Unix box) */
+#define USE_FCYC   0   /* cycle counter w/K-best scheme (x86 & Alpha only) */
+#define USE_ITIMER 0   /* interval timer (any Unix box) */
+#define USE_GETTOD 1   /* gettimeofday (any Unix box) */
 
 #endif /* __CONFIG_H */
